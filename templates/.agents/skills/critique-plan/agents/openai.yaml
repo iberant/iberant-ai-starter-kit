@@ -1,0 +1,4 @@
+interface:
+  display_name: "Critique Plan"
+  short_description: "Critique the current plan from a senior engineer's perspective"
+  default_prompt: "Use $critique-plan to critique this implementation plan and return a revised version with file-level risks."

@@ -131,6 +131,7 @@ npm install -g @openai/codex                  # Codex
 # Windows (PowerShell) con winget
 winget install Git.Git OpenJS.NodeJS GitHub.cli
 corepack enable; corepack prepare pnpm@latest --activate
+winget install Microsoft.Coreutils
 # .NET (solo backend): winget install Microsoft.DotNet.SDK.8
 
 # AI assistants:

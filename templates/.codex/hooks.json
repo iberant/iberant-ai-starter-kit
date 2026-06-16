@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -lc 'pnpm run lint --silent --fix 1>&2 || true'",
+            "commandWindows": "pwsh -NoLogo -NoProfile -Command \"pnpm run lint --silent --fix 1>&2; exit 0\"",
+            "timeout": 120,
+            "statusMessage": "Running lint --fix after edits"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -lc 'pnpm test --silent 1>&2; code=$?; if [ $code -eq 0 ]; then printf \"{}\"; else printf \"{\\\"decision\\\":\\\"block\\\",\\\"reason\\\":\\\"pnpm test --silent failed. Review the failing test output and fix the issue before finishing.\\\"}\"; fi'",
+            "commandWindows": "pwsh -NoLogo -NoProfile -Command \"pnpm test --silent 1>&2; if ($LASTEXITCODE -eq 0) { '{}' } else { '{\\\"decision\\\":\\\"block\\\",\\\"reason\\\":\\\"pnpm test --silent failed. Review the failing test output and fix the issue before finishing.\\\"}' }\"",
+            "timeout": 600,
+            "statusMessage": "Running test suite before finishing"
+          }
+        ]
+      }
+    ]
+  }
+}
