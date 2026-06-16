@@ -1,0 +1,44 @@
+{
+  "_comment": "Example Claude Code project settings. Permissions reduce approval prompts for commands you trust; hooks enforce actions deterministically (CLAUDE.md is only advisory). Adjust to your stack and commit this file. Put personal overrides in .claude/settings.local.json (gitignored).",
+
+  "permissions": {
+    "allow": [
+      "Bash(pnpm run lint)",
+      "Bash(pnpm test)",
+      "Bash(pnpm run build)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh pr create:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./**/*.pem)"
+    ]
+  },
+
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pnpm run lint --silent --fix 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pnpm test --silent"
+          }
+        ]
+      }
+    ]
+  }
+}

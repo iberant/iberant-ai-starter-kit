@@ -1,0 +1,24 @@
+# Secrets — never commit real values
+.env
+.env.local
+*.pem
+
+# AI agent local overrides (personal, not shared)
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Vite / React (frontend)
+node_modules/
+dist/
+.env.*.local
+coverage/
+
+# ASP.NET Core (backend)
+bin/
+obj/
+*.user
+.vs/
+appsettings.*.local.json
+# Note: real secrets use `dotnet user-secrets` (stored outside the repo) or env vars,
+# so there is nothing secret to ignore here. Do NOT commit appsettings.Production.json
+# if it ever contains credentials.
