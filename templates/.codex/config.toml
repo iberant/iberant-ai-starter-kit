@@ -1,0 +1,25 @@
+# Example Codex configuration template.
+# Intention-equivalent to templates/.claude/settings.json:
+# - keep the project trusted to reduce approval friction
+# - keep shared project guidance in AGENTS.md
+# - document where Codex-specific hooks live
+#
+# Copy the parts you want into ~/.codex/config.toml and adjust them to your machine.
+# Codex currently keeps most user/global settings in ~/.codex/config.toml.
+
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+
+# Optional: if you use a custom project doc name in some repos, add it here.
+# Codex already reads AGENTS.md natively, so this is usually unnecessary.
+# project_doc_fallback_filenames = ["AGENTS.md", "CLAUDE.md"]
+
+# Mark the repository as trusted so Codex can work with less friction.
+# Replace the placeholder path with the absolute path to your local repo.
+[projects.'C:\path\to\your\repo']
+trust_level = "trusted"
+
+# Optional Windows default. Use "workspace-write" for a safer default,
+# or "elevated" if your team intentionally prefers fewer sandbox limits.
+[windows]
+sandbox = "workspace-write"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Postmortem"
+  short_description: "Scaffold a dated postmortem folder under docs/postmortems/"
+  default_prompt: "Use $postmortem to create a postmortem for the bug/issue just fixed and return a revised version with file-level risks."

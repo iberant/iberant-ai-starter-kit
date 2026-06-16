@@ -87,6 +87,11 @@ templates/
 ├── CLAUDE.md                         # Symlink -> AGENTS.md
 ├── .env.example                      # Secret placeholders (commit this, not .env)
 ├── .gitignore                        # Ignores secrets + AI local overrides
+├── .agents/
+│   └── skills/api-conventions/SKILL.md
+├── .codex/
+│   ├── config.toml                   # Configurations, profiles, sandbox, ...
+│   └── hooks.json                    # Hooks
 ├── docs/
 │   ├── Architecture.md               # Sub-file: stack, modules, decisions, gotchas
 │   └── postmortems/
