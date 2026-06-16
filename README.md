@@ -131,8 +131,8 @@ Lee **[STARTUP.md](STARTUP.md)** para el detalle completo.
 
 ## Licencia
 
-Copyright © 2026 **IBERANT SOLUTIONS S.L.** Todos los derechos reservados.
+Copyright © 2026 **IBERANT SOLUTIONS S.L.**
 
-Software propietario. Ninguna parte de este repositorio puede usarse, copiarse, modificarse ni
-distribuirse sin el permiso previo y por escrito de IBERANT SOLUTIONS S.L. Consulta el fichero
-[LICENSE](LICENSE).
+Distribuido bajo la licencia **MIT**. Puedes usar, copiar, modificar y distribuir este software
+libremente siempre que conserves el aviso de copyright y la nota de licencia. Consulta el fichero
+[LICENSE](LICENSE) para el texto completo.
